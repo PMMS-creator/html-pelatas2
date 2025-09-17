@@ -1,0 +1,191 @@
+/* global safety rails */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;      /* stop horizontal scroll if anything slips */
+}
+
+.hero {
+  position: relative;
+  background: url("./img/your-hero.jpg") center / cover no-repeat; /* if you use a bg image */
+  /* OR if you use an <img>, give it: img.hero-img{width:100%;display:block;} */
+  padding-block: clamp(48px, 12vw, 120px);
+  color: #fff;
+}
+.hero .container { /* keeps text aligned with everything else */
+  position: relative;
+}
+.hero-title {
+  font-size: clamp(28px, 6vw, 56px);
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+.hero-subtitle {
+  font-size: clamp(16px, 3.6vw, 20px);
+  margin: 0 0 20px;
+  opacity: .95;
+}
+
+/* images & media never exceed the screen */
+img, video, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* containers should never be wider than the viewport */
+body > * {
+  max-width: 100%;
+}
+
+/* avoid using 100vw (causes overflow with scrollbars) */
+.header, .footer, .hero, .container {
+  width: 100%;             /* use 100% instead of 100vw */
+}
+
+/* if you have card rows or grids, make them wrap */
+.row, .cards, .coach-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.row > * , .cards > * , .coach-grid > * { min-width: 0; } /* prevents flex items from blowing out */
+/* styles.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: left;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.coach-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.coach-card img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.coach-card h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.how-it-works h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.how-it-works ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 800px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .coach-card {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .coach-card img {
+    max-width: 200px;
+  }
+}
+.search-bar{
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;  /* desktop/tablet */
+  gap: 12px;
+  align-items: center;
+  margin-top: 16px;
+}
+.search-bar select,
+.search-bar input{
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+#search-btn{
+  height: 48px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 14px;
+  font-weight: 600;
+  background: #e47d4a;
+  color: #fff;
+  cursor: pointer;
+}
+/* phone: stack and fill width */
+@media (max-width: 640px){
+  .search-bar{ grid-template-columns: 1fr; }
+  #search-btn{ width: 100%; }
+}
+/* keep consistent side gutters + center all hero text */
+.hero .content{
+  width: min(1100px, 100% - 32px);  /* nice 16px gutters on both sides */
+  margin-inline: auto;              /* centers the block */
+  text-align: center;               /* centers title + subtitle */
+}
+
+/* optional: tidy spacing */
+.hero-title{ margin: 0 0 12px; }
+.hero-subtitle{ margin: 0 0 20px; }
+
+/* --- Mobile adjustments for search bar --- */
+@media (max-width: 640px) {
+  .search-bar select,
+  .search-bar input,
+  .search-bar button {
+    font-size: 14px;      /* smaller text */
+    height: 38px;         /* shorter elements */
+    padding: 0 10px;      /* less side padding */
+  }
+
+  /* make sure they don't stretch too tall */
+  .search-bar button {
+    padding: 0 12px;
+    font-weight: 600;
+  }
+
+  /* stack everything with small gaps */
+  .search-bar {
+    grid-template-columns: 1fr;  /* stack vertically */
+    gap: 8px;
+  }
+}
