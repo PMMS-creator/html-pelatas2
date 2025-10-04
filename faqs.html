@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ / Help · Pelatas</title>
+  <meta name="description" content="Pelatas FAQ / Help Center" />
+  <style>
+    :root{
+      --bg:white; --paper:white; --ink:#0E1013; --muted:#6A7B86;
+      --accent:#d45a2e; --accent-dark:#c25129; --accent-ink:#fff;
+      --line:#F1E8DE; --ring:rgba(212,90,46,.18);
+      --radius:14px; --shadow:0 10px 28px rgba(17,24,39,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--ink);
+         font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7}
+    a{color:inherit}
+    /* Header */
+    header{position:sticky;top:0;z-index:10;background:var(--bg);
+           border-bottom:1px solid var(--line);backdrop-filter:saturate(110%) blur(6px)}
+    .row{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 20px}
+    .brand{font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:700;color:#000}
+    nav a{color:var(--muted);text-decoration:none;font-weight:500;margin-left:22px}
+    nav a:hover{color:var(--ink)}
+    .btn{background:var(--accent);color:var(--accent-ink);text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600;border:1px solid var(--accent-dark);box-shadow:0 6px 18px var(--ring)}
+    /* Hero */
+    .hero{max-width:960px;margin:0 auto;padding:56px 20px 18px;text-align:center}
+    .hero h1{font-family:Georgia,'Times New Roman',serif;font-size:48px;margin:0 0 10px;line-height:1.15}
+    .hero p{color:var(--muted);margin:0}
+    /* Content */
+    .container{max-width:960px;margin:0 auto;padding:22px 20px 60px}
+    .section-title{font-family:Georgia,'Times New Roman',serif;font-size:30px;margin:28px 0 12px}
+    .faq-group{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:10px}
+    details{border-top:1px solid var(--line)}
+    details:first-of-type{border-top:none}
+    summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 14px;font-weight:600}
+    summary::after{content:"›";transform:rotate(90deg);color:#7b8a95}
+    details[open] summary::after{transform:rotate(-90deg)}
+    details > div{padding:0 14px 18px;color:#2a3640}
+    .hint{color:var(--muted);font-size:14px}
+    .callout{background:#fff7f1;border:1px solid #f2c9b6;color:#7a3b22;border-radius:10px;padding:10px 12px;margin-top:8px}
+    .toc{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 6px}
+    .toc a{background:#fff;border:1px solid var(--line);padding:8px 12px;border-radius:10px;text-decoration:none;color:#2a3640}
+    .toc a:hover{box-shadow:0 0 0 6px var(--ring)}
+    footer{border-top:1px solid var(--line);text-align:center;padding:36px 20px;color:var(--muted)}
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white; 
+  padding: 24px 40px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #C84F28;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.login {
+  background-color: transparent;
+  color: #C84F28;
+  font-size: 1rem;
+  padding: 10px 18px;
+  border: 2px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.apply {
+  background-color: #000;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .logo {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .actions button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+
+}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+<header class="header">
+  <div class="logo">Pelatas</div>
+  <div class="actions">
+      <a href="./login.html" class="login">Log In</a>
+      <a href="./CreateTrainerAccount.html" class="apply">Apply to Join</a>
+  </div>
+</header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>FAQs / Help</h1>
+    <p>How Pelatas works, how to get started, help for trainers, and more.</p>
+    <div class="toc" aria-label="On-page navigation">
+      <a href="#getting-started">Getting Started</a>
+      <a href="#for-trainers">For Trainers</a>
+      <a href="#booking">Booking & Payments</a>
+      <a href="#safety">Safety & Trust</a>
+      <a href="#accounts">Accounts & Privacy</a>
+      <a href="#support">Troubleshooting & Support</a>
+    </div>
+  </section>
+
+  <main class="container">
+
+    <!-- Getting Started -->
+    <h2 id="getting-started" class="section-title">Getting Started</h2>
+    <div class="faq-group" role="region" aria-labelledby="getting-started">
+      <details>
+        <summary>What is Pelatas?</summary>
+        <div>
+          Pelatas is a platform that connects athletes, performers, and professionals with trainers and mentors across sports, arts, wellness, and personal development.
+          Browse profiles, compare expertise, and contact partners directly.
+        </div>
+      </details>
+      <details>
+        <summary>How does Pelatas work?</summary>
+        <div>
+          1) Search or browse partners, 2) open a profile to learn about specialty, reviews, and contact info, 3) reach out via email, phone, or social to discuss fit, availability, and pricing.
+          <span class="hint">In-app booking may be added in the future.</span>
+        </div>
+      </details>
+      <details>
+        <summary>Is Pelatas free to use?</summary>
+        <div>
+          Yes. Browsing profiles and contacting trainers is free. If you book, you’ll pay the trainer directly according to their rates and policies.
+        </div>
+      </details>
+      <details>
+        <summary>Do you offer virtual sessions?</summary>
+        <div>
+          Many partners offer virtual sessions. Look for “Virtual” on a profile or ask the trainer directly.
+        </div>
+      </details>
+      <details>
+        <summary>Which categories do you support?</summary>
+        <div>
+          Sports (e.g., basketball, tennis), performance (voice, acting, music), fitness & wellness (strength, mobility, mindfulness), academics/test prep, and more. New categories are added over time.
+        </div>
+      </details>
+    </div>
+
+    <!-- For Trainers -->
+    <h2 id="for-trainers" class="section-title">For Trainers (Pelatas Partners)</h2>
+    <div class="faq-group" role="region" aria-labelledby="for-trainers">
+      <details>
+        <summary>How do I join as a trainer?</summary>
+        <div>
+          Apply on the <a href="./signup.html">Sign Up</a> page. Share your experience, specialties, certifications (if applicable), and examples of results. If approved, we’ll help you publish a polished profile.
+        </div>
+      </details>
+      <details>
+        <summary>What are the requirements to join?</summary>
+        <div>
+          Demonstrated expertise, professionalism, clear communication, and relevant references or testimonials. Some fields may expect specific credentials; list these on your profile.
+        </div>
+      </details>
+      <details>
+        <summary>How do I get more clients on Pelatas?</summary>
+        <div>
+          Keep your profile complete and specific (bio, specialties, location/virtual), add reviews, post a short intro video, and respond quickly to inquiries.
+        </div>
+      </details>
+      <details>
+        <summary>Can I set my own rates and policies?</summary>
+        <div>
+          Yes. You control pricing, packages (single sessions or bundles), and cancellation terms. Display them on your profile and in client communications.
+        </div>
+      </details>
+      <details>
+        <summary>How are reviews handled?</summary>
+        <div>
+          Clients can share feedback after working with you. We monitor for respectful language and may remove content that violates our guidelines.
+        </div>
+      </details>
+    </div>
+
+    <!-- Booking & Payments -->
+    <h2 id="booking" class="section-title">Booking & Payments</h2>
+    <div class="faq-group" role="region" aria-labelledby="booking">
+      <details>
+        <summary>How do I schedule a session?</summary>
+        <div>
+          Contact the trainer via the links on their profile to confirm fit, date/time, location/virtual, and price. The trainer will share their preferred calendar and payment method.
+        </div>
+      </details>
+      <details>
+        <summary>What payment methods are supported?</summary>
+        <div>
+          Trainers typically accept standard methods (e.g., card processors, payment apps). Confirm accepted methods with the trainer before booking.
+        </div>
+      </details>
+      <details>
+        <summary>What is your cancellation or rescheduling policy?</summary>
+        <div>
+          Policies vary by trainer. Many require 24–48 hours’ notice for full refunds or credits. Review the policy on the trainer’s profile or ask directly.
+        </div>
+      </details>
+      <details>
+        <summary>Do you offer packages or subscriptions?</summary>
+        <div>
+          Many trainers offer discounted multi-session packages. Look for this on the profile or request a custom plan.
+        </div>
+      </details>
+    </div>
+
+    <!-- Safety & Trust -->
+    <h2 id="safety" class="section-title">Safety & Trust</h2>
+    <div class="faq-group" role="region" aria-labelledby="safety">
+      <details open>
+        <summary>Does Pelatas vet trainers?</summary>
+        <div class="callout">
+          No. Pelatas is a visibility and connection platform — we do <strong>not</strong> verify, vet, or background-check trainers. Each trainer is responsible for their own qualifications, credentials, and safety practices.
+        </div>
+      </details>
+      <details>
+        <summary>How can I make sure a trainer is a good fit?</summary>
+        <div>
+          Review profiles and client feedback, ask questions about experience and approach, and request references or proof of credentials directly from the trainer if needed.
+        </div>
+      </details>
+      <details>
+        <summary>What if I have a concern about a trainer or session?</summary>
+        <div>
+          Save details (dates, messages, screenshots) and email <a href="mailto:team@pelatas.com">team@pelatas.com</a>. We’ll review and may remove profiles that violate our community guidelines.
+        </div>
+      </details>
+    </div>
+
+    <!-- Accounts & Privacy -->
+    <h2 id="accounts" class="section-title">Accounts & Privacy</h2>
+    <div class="faq-group" role="region" aria-labelledby="accounts">
+      <details>
+        <summary>How do I create an account?</summary>
+        <div>
+          Use <a href="/signup">Sign Up</a> to register as a client or trainer. Trainers complete an application; clients can save favorites and manage inquiries.
+        </div>
+      </details>
+      <details>
+        <summary>How do I update or remove my profile?</summary>
+        <div>
+          Trainers can update approved profile details anytime. To pause or remove a profile, email <a href="mailto:team@pelatas.com">team@pelatas.com</a>.
+        </div>
+      </details>
+      <details>
+        <summary>How does Pelatas protect my data?</summary>
+        <div>
+          We use industry-standard security and collect only what’s needed to provide the service. A full Privacy Policy will be posted soon.
+        </div>
+      </details>
+    </div>
+
+    <!-- Troubleshooting & Support -->
+    <h2 id="support" class="section-title">Troubleshooting & Support</h2>
+    <div class="faq-group" role="region" aria-labelledby="support">
+      <details>
+        <summary>I didn’t get a reply from a trainer — what should I do?</summary>
+        <div>
+          Give it 1–2 business days, then follow up. You can also message a few similar trainers to keep momentum.
+        </div>
+      </details>
+      <details>
+        <summary>My message failed to send.</summary>
+        <div>
+          Try another contact method on the profile (email/phone/social). If issues persist, contact <a href="mailto:team@pelatas.com">team@pelatas.com</a>.
+        </div>
+      </details>
+      <details>
+        <summary>Still need help?</summary>
+        <div>
+          Email us at <a href="mailto:team@pelatas.com">team@pelatas.com</a> and we’ll jump in.
+        </div>
+      </details>
+    </div>
+
+  </main>
+
+
+<footer style="background:#C84F28; color:#fff; padding:40px 20px; text-align:center;">
+  <div style="max-width:1100px; margin:0 auto;">
+    
+    <!-- Brand + Copyright -->
+    <div style="font-family:Georgia,'Times New Roman',serif; font-size:22px; font-weight:700; margin-bottom:6px;">
+      Pelatas
+    </div>
+    <div style="margin-bottom:20px;">
+      © 2025. All rights reserved.
+    </div>
+
+    <!-- Navigation Links -->
+    <nav style="margin-bottom:18px; font-size:15px;">
+      <a href="./index.html" style="color:#fff; text-decoration:none; margin:0 10px;">Home</a>
+      <a href="./about.html" style="color:#fff; text-decoration:none; margin:0 10px;">About</a>
+      <a href="./faqs.html" style="color:#fff; text-decoration:none; margin:0 10px;">FAQs</a>
+      <a href="./terms.html" style="color:#fff; text-decoration:none; margin:0 10px;">Terms of Service</a>
+      <a href="./privacy.html" style="color:#fff; text-decoration:none; margin:0 10px;">Privacy Policy</a>
+      <a href="./contact.html" style="color:#fff; text-decoration:none; margin:0 10px;">Contact</a>
+    </nav>
+
+    <!-- Contact -->
+    <div style="margin-bottom:18px; font-size:15px;">
+      <a href="mailto:team@pelatas.com" style="color:#fff; text-decoration:none;">
+        team@pelatas.com
+      </a>
+    </div>
+
+    <!-- Social Icons -->
+    <div style="display:flex; justify-content:center; gap:20px;">
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="color:#fff;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 
+          2.239 5 5 5h14c2.762 0 5-2.239 
+          5-5v-14c0-2.761-2.238-5-5-5zm-11 
+          19h-3v-10h3v10zm-1.5-11.268c-.966 
+          0-1.75-.79-1.75-1.764s.784-1.764 
+          1.75-1.764c.965 0 1.75.79 
+          1.75 1.764s-.785 1.764-1.75 
+          1.764zm13.5 11.268h-3v-5.604c0-1.337-.025-3.058-1.865-3.058-1.868 
+          0-2.155 1.459-2.155 
+          2.963v5.699h-3v-10h2.881v1.367h.041c.401-.761 
+          1.379-1.562 2.838-1.562 
+          3.033 0 3.591 1.996 3.591 4.59v5.605z"/>
+        </svg>
+      </a>
+      <!-- Instagram -->
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" style="color:#fff;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 
+          4.85.07 1.366.062 2.633.332 
+          3.608 1.308.975.975 1.246 2.242 
+          1.308 3.608.058 1.266.069 1.645.069 
+          4.851s-.012 3.584-.07 4.85c-.062 
+          1.366-.332 2.633-1.308 
+          3.608-.975.975-2.242 1.246-3.608 
+          1.308-1.266.058-1.645.069-4.851.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.332-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 
+          15.747 2.163 15.368 2.163 
+          12s.012-3.584.07-4.85c.062-1.366.332-2.633 
+          1.308-3.608.975-.975 2.242-1.246 
+          3.608-1.308C8.416 2.175 8.796 2.163 
+          12 2.163zm0-2.163C8.741 0 8.332.012 
+          7.052.07 5.775.128 4.602.443 
+          3.635 1.41c-.966.967-1.282 2.14-1.34 
+          3.417C2.012 6.107 2 6.516 2 
+          9.775v4.45c0 3.259.012 3.668.07 
+          4.948.058 1.277.374 2.45 
+          1.34 3.417.967.967 2.14 1.282 
+          3.417 1.34 1.28.058 1.689.07 
+          4.948.07s3.668-.012 
+          4.948-.07c1.277-.058 2.45-.374 
+          3.417-1.34.967-.967 1.282-2.14 
+          1.34-3.417.058-1.28.07-1.689.07-4.948v-4.45c0-3.259-.012-3.668-.07-4.948-.058-1.277-.374-2.45-1.34-3.417C19.4.443 
+          18.227.128 16.95.07 15.668.012 15.259 
+          0 12 0zm0 5.838a6.162 6.162 0 1 0 0 
+          12.324 6.162 6.162 0 0 0 0-12.324zm0 
+          10.162a3.999 3.999 0 1 1 0-7.998 3.999 
+          3.999 0 0 1 0 7.998zm6.406-11.845a1.44 
+          1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88z"/>
+        </svg>
+      </a>
+      <!-- TikTok -->
+      <a href="https://tiktok.com" target="_blank" aria-label="TikTok" style="color:#fff;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+          <path d="M12 0c-6.627 0-12 5.373-12 
+          12s5.373 12 12 12 12-5.373 
+          12-12-5.373-12-12-12zm3.75 
+          9.75c1.284.927 2.934 1.5 
+          4.688 1.5v-3.188c-.337.033-.675.05-1.012.05-1.125 
+          0-2.25-.375-3.188-1.063v7.313c0 
+          2.737-2.213 4.95-4.95 4.95s-4.95-2.213-4.95-4.95 
+          2.213-4.95 4.95-4.95c.35 
+          0 .688.038 1.012.113v3.212c-.325-.1-.662-.15-1.012-.15-1.237 
+          0-2.25 1.013-2.25 2.25s1.013 2.25 
+          2.25 2.25 2.25-1.013 
+          2.25-2.25v-8.962h3.212c-.088.537-.262 
+          1.05-.512 1.5z"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</footer>
+</body>
+</html>
