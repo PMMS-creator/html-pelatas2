@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Create your Pelatas' Client Account</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Inter is optional; remove if you prefer pure system font -->
+<style>
+CSS PART
+/* Hero */
+.hero{position:relative;height:min(72vh,780px);min-height:520px;background:url('hero.jpg') center/cover no-repeat;display:flex;align-items:center}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.28),rgba(0,0,0,.28))}
+.hero .content{position:relative;z-index:1;max-width:1100px;margin:0 auto;padding:0 24px;color:#fff}
+h1{font-family:'Playfair Display',serif;font-weight:700;line-height:1.05;font-size:clamp(32px,5vw,64px);margin:0 0 18px}
+.sub{font-size:18px;color:#C84F28;max-width:720px;margin:0 0 24px}
+.cta{display:inline-block;background:var(--brand);color:#fff;padding:14px 22px;border-radius:12px;text-decoration:none;font-weight:600}
+/* ====== Base / Theme ====== */
+:root{
+  --orange: #C84F28;          /* Pelatas orange (adjust if you have a brand hex) */
+  --orange-600: #C84F28;
+  --text: #0A0A0A;
+  --muted: #5B5F66;
+  --border: #E7E8EB;
+  --bg: #FFFFFF;
+  --card: #FFFFFF;
+  --shadow: 0 8px 24px rgba(16, 24, 40, 0.06);
+  --radius: 14px;
+  --radius-lg: 24px;
+  --focus: 2px solid #111;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin: 0;
+  color: var(--text);
+  background: #FAFBFC;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.45;
+}
+
+/* Utility */
+.container{
+  width: min(1100px, 100% - 32px); /* sweet 16px side gutters */
+  margin-inline: auto;
+}
+.mt-8{ margin-top: 8px; }
+.small{ font-size: 0.9375rem; color: var(--muted); }
+.link{ color: var(--orange); text-decoration: none; }
+.link:hover{ text-decoration: underline; }
+
+/* ====== Header ====== */
+.site-header{
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; z-index: 20;
+}
+
+.header-inner{
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+}
+
+.brand{
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-nav{
+  justify-self: end;
+  display: flex;
+  gap: 20px;
+}
+.site-nav a{
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+.site-nav a:hover{ color: var(--orange); }
+
+/* Hamburger (mobile) */
+.nav-toggle{ display: none; }
+.hamburger{
+  display: none;
+  width: 34px; height: 28px; cursor: pointer;
+  align-items: center; justify-content: center;
+}
+.hamburger span{
+  display: block; height: 2px; width: 100%; background: var(--text);
+}
+.hamburger span + span{ margin-top: 6px; }
+
+/* ====== Page / Card ====== */
+.page{ padding: 28px 0 56px; }
+
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+/* Two-column layout that collapses on mobile */
+.sign-up{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+.form-col, .why-col{ padding: 8px; }
+
+.title{
+  font-size: clamp(1.8rem, 2.4vw + 1rem, 2.6rem);
+  line-height: 1.1;
+  margin: 10px 0 6px;
+  letter-spacing: -0.02em;
+}
+.sub{
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+
+/* Segmented control (radios styled like buttons) */
+.segment{
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 12px 0 10px;
+}
+.segment input{ position: absolute; opacity: 0; pointer-events: none; }
+.segment label{
+  padding: 10px 14px;
+  text-align: center;
+  cursor: pointer;
+  background: #fff;
+  border-right: 1px solid var(--border);
+  user-select: none;
+}
+.segment label:last-of-type{ border-right: 0; }
+.segment input:checked + label{
+  outline: 2px solid var(--orange);
+  outline-offset: -2px;
+  color: var(--orange);
+  font-weight: 600;
+  background: #FFF7F3;
+}
+
+/* Form fields */
+.form{
+  margin-top: 6px;
+  max-width: 520px;
+}
+.field{ margin-top: 12px; }
+label{ display: block; font-weight: 500; margin-bottom: 6px; }
+input[type="text"],
+input[type="email"],
+input[type="password"]{
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+input:focus{ border-color: var(--orange); box-shadow: 0 0 0 4px rgba(255,90,31,0.12); }
+
+.btn-primary{
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--orange);
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-primary:hover{ background: var(--orange-600); }
+.btn-primary:focus{ outline: var(--focus); }
+
+.disclaimer{
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Why column */
+.why-col h2{
+  font-size: 1.35rem;
+  margin: 8px 0 6px;
+}
+.checks{
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+.checks li{
+  position: relative;
+  padding-left: 28px;
+  margin: 12px 0;
+}
+.checks li::before{
+  content: "";
+  position: absolute;
+  left: 0; top: 4px;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--orange);
+  /* simple check mark */
+  background:
+    linear-gradient(45deg, transparent 45%, var(--orange) 46%) left 6px top 9px / 6px 2px no-repeat,
+    linear-gradient(-45deg, transparent 45%, var(--orange) 46%) left 2px top 12px / 10px 2px no-repeat;
+}
+
+/* ====== Footer ====== */
+.site-footer{
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+.footer-inner{
+  display: grid;
+  gap: 12px;
+  padding: 18px 0;
+  align-items: center;
+}
+.footer-nav{
+  display: flex; flex-wrap: wrap; gap: 14px;
+}
+.footer-nav a{
+  color: var(--muted);
+  text-decoration: none;
+}
+.footer-nav a:hover{ color: var(--orange); }
+
+/* ====== Responsive ====== */
+@media (max-width: 880px){
+  /* mobile header */
+  .site-nav{
+    position: absolute;
+    inset: 60px 0 auto 0;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    gap: 12px;
+    padding: 12px 16px 16px;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: 160ms ease;
+  }
+  .hamburger{ display: inline-flex; justify-self: end; }
+  .site-nav a{ padding: 6px 2px; }
+  .nav-toggle:checked ~ .site-nav{ transform: scaleY(1); }
+  .header-inner{ grid-template-columns: 1fr auto; }
+
+  /* page */
+  .card{ border-radius: var(--radius); padding: 18px; }
+  .why-col{ padding-top: 0; }
+}
+
+@media (min-width: 881px){
+  .sign-up{
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 8px 28px;
+    padding: 26px;
+  }
+  .footer-inner{
+    grid-template-columns: 1fr auto;
+  }
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: none
+  padding: 24px 40px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ea580c; /* Orange */;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.login {
+  background-color: transparent;
+  color: #C84F28;
+  font-size: 1rem;
+  padding: 10px 18px;
+  border: 2px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.apply {
+  background-color: black; 
+  color: white;
+  font-size: 1rem;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .logo {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .actions button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+.trainer-profile {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+.signup-form label {
+  display: block;
+  margin-top: 1em;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.3em;
+  box-sizing: border-box;
+}
+
+.benefits h2 {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.checklist li {
+  margin-bottom: 0.5em;
+  padding-left: 1.2em;
+}
+.signup-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.form-row.two-column {
+  display: flex;
+  gap: 1em;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+input, select, textarea {
+  padding: 0.5em;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.hero-section {
+  background-image: url('./tennis.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 4em 2em;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "./tennis.jpeg";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* semi-transparent overlay */
+  z-index: 0;
+}
+
+.hero-section > * {
+  position: relative;
+  z-index: 1;
+}
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: none
+  padding: 24px 40px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #C84F28; /* Orange */;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.login {
+  background-color: transparent;
+  color: #C84F28;
+  font-size: 1rem;
+  padding: 10px 18px;
+  border: 2px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.apply {
+  background-color: black; 
+  color: white;
+  font-size: 1rem;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .logo {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .actions button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="logo">Pelatas</div>
+  <div class="actions">
+      <a href="./login.html" class="login">Log In</a>
+      <a href="./CreateTrainerAccount.html" class="apply">Apply to Join</a>
+  </div>
+</header>
+  <!-- Main -->
+  <main class="container page">
+    <section class="card sign-up">
+<div class="hero-section">
+  <h1>Create your Pelatas' Client Profile</h1>
+  <p>It's free to join. Find the right expertise in minutes.</p>
+
+  <h2>Unlock your full potential</h2>
+  <ul class="checklist">
+    <li>✔️ Client reviews provide insight of fit</li>    
+    <li>✔️ Choose your connection: virtual, in-person, or hybrid</li>
+    <li>✔️ Work directly with expert trainers for scheduling and pricing</li>
+
+  </ul>
+</div>
+
+<br/>
+        <form class="form" action="#" method="post" novalidate>
+          <div class="field">
+            <label for="first">First name</label>
+            <input id="first" name="first" type="text" autocomplete="given-name" required>
+          </div>
+
+          <div class="field">
+            <label for="last">Last name</label>
+            <input id="last" name="last" type="text" autocomplete="family-name" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+
+<br/>
+<div class="media-buttons">
+      <div class="media-button">📷 Add Profile Picture</div>
+ 
+    </div>
+
+<br/>
+
+    <div class="form-group">
+      <label>Client Base Location: City, State</label>
+      <input type="text" placeholder="e.g. Seattle, WA" />
+    </div>
+
+
+<br/>
+        <div class="field">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" minlength="8" placeholder="8+ characters" required>
+          </div>
+        <div class="field">
+<br/>
+
+          <a href="trainer-profile.html" class="btn-primary">Submit</a>
+
+
+   </div>
+        </form>
+      </div>
+ 
+      </aside>
+    </section>
+  </main>
+
+<footer style="background:#C84F28; color:#fff; padding:40px 20px; text-align:center;">
+  <div style="max-width:1100px; margin:0 auto;">
+    
+    <!-- Brand + Copyright -->
+    <div style="font-family:Georgia,'Times New Roman',serif; font-size:22px; font-weight:700; margin-bottom:6px;">
+      Pelatas
+    </div>
+    <div style="margin-bottom:20px;">
+      © 2025. All rights reserved.
+    </div>
+
+    <!-- Navigation Links -->
+    <nav style="margin-bottom:18px; font-size:15px;">
+      <a href="./index.html" style="color:#fff; text-decoration:none; margin:0 10px;">Home</a>
+      <a href="./about.html" style="color:#fff; text-decoration:none; margin:0 10px;">About</a>
+      <a href="./faqs.html" style="color:#fff; text-decoration:none; margin:0 10px;">FAQs</a>
+      <a href="./terms.html" style="color:#fff; text-decoration:none; margin:0 10px;">Terms of Service</a>
+      <a href="./privacy.html" style="color:#fff; text-decoration:none; margin:0 10px;">Privacy Policy</a>
+      <a href="./contact.html" style="color:#fff; text-decoration:none; margin:0 10px;">Contact</a>
+    </nav>
+
+    <!-- Contact -->
+    <div style="margin-bottom:18px; font-size:15px;">
+      <a href="mailto:team@pelatas.com" style="color:#fff; text-decoration:none;">
+        team@pelatas.com
+      </a>
+    </div>
+
+    <!-- Social Icons -->
+    <div style="display:flex; justify-content:center; gap:20px;">
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="color:#fff;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 
+          2.239 5 5 5h14c2.762 0 5-2.239 
+          5-5v-14c0-2.761-2.238-5-5-5zm-11 
+          19h-3v-10h3v10zm-1.5-11.268c-.966 
+          0-1.75-.79-1.75-1.764s.784-1.764 
+          1.75-1.764c.965 0 1.75.79 
+          1.75 1.764s-.785 1.764-1.75 
+          1.764zm13.5 11.268h-3v-5.604c0-1.337-.025-3.058-1.865-3.058-1.868 
+          0-2.155 1.459-2.155 
+          2.963v5.699h-3v-10h2.881v1.367h.041c.401-.761 
+          1.379-1.562 2.838-1.562 
+          3.033 0 3.591 1.996 3.591 4.59v5.605z"/>
+        </svg>
+      </a>
+      <!-- Instagram -->
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" style="color:#fff;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 
+          4.85.07 1.366.062 2.633.332 
+          3.608 1.308.975.975 1.246 2.242 
+          1.308 3.608.058 1.266.069 1.645.069 
+          4.851s-.012 3.584-.07 4.85c-.062 
+          1.366-.332 2.633-1.308 
+          3.608-.975.975-2.242 1.246-3.608 
+          1.308-1.266.058-1.645.069-4.851.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.332-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 
+          15.747 2.163 15.368 2.163 
+          12s.012-3.584.07-4.85c.062-1.366.332-2.633 
+          1.308-3.608.975-.975 2.242-1.246 
+          3.608-1.308C8.416 2.175 8.796 2.163 
+          12 2.163zm0-2.163C8.741 0 8.332.012 
+          7.052.07 5.775.128 4.602.443 
+          3.635 1.41c-.966.967-1.282 2.14-1.34 
+          3.417C2.012 6.107 2 6.516 2 
+          9.775v4.45c0 3.259.012 3.668.07 
+          4.948.058 1.277.374 2.45 
+          1.34 3.417.967.967 2.14 1.282 
+          3.417 1.34 1.28.058 1.689.07 
+          4.948.07s3.668-.012 
+          4.948-.07c1.277-.058 2.45-.374 
+          3.417-1.34.967-.967 1.282-2.14 
+          1.34-3.417.058-1.28.07-1.689.07-4.948v-4.45c0-3.259-.012-3.668-.07-4.948-.058-1.277-.374-2.45-1.34-3.417C19.4.443 
+          18.227.128 16.95.07 15.668.012 15.259 
+          0 12 0zm0 5.838a6.162 6.162 0 1 0 0 
+          12.324 6.162 6.162 0 0 0 0-12.324zm0 
+          10.162a3.999 3.999 0 1 1 0-7.998 3.999 
+          3.999 0 0 1 0 7.998zm6.406-11.845a1.44 
+          1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88z"/>
+        </svg>
+      </a>
+      <!-- TikTok -->
+      <a href="https://tiktok.com" target="_blank" aria-label="TikTok" style="color:#fff;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+          <path d="M12 0c-6.627 0-12 5.373-12 
+          12s5.373 12 12 12 12-5.373 
+          12-12-5.373-12-12-12zm3.75 
+          9.75c1.284.927 2.934 1.5 
+          4.688 1.5v-3.188c-.337.033-.675.05-1.012.05-1.125 
+          0-2.25-.375-3.188-1.063v7.313c0 
+          2.737-2.213 4.95-4.95 4.95s-4.95-2.213-4.95-4.95 
+          2.213-4.95 4.95-4.95c.35 
+          0 .688.038 1.012.113v3.212c-.325-.1-.662-.15-1.012-.15-1.237 
+          0-2.25 1.013-2.25 2.25s1.013 2.25 
+          2.25 2.25 2.25-1.013 
+          2.25-2.25v-8.962h3.212c-.088.537-.262 
+          1.05-.512 1.5z"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</footer>
+  <!-- Tiny helper to keep the year current (optional) -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
