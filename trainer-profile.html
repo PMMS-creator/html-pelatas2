@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pelatas Partner Profile</title>
+  <meta name="description" content="Pelatas partner profile with bio, expertise, and contact links." />
+  <style>
+    :root{
+      --bg:white; --paper:#FFFDF9; --ink:#0E1013; --muted:#6A7B86;
+      --accent:#d45a2e; --accent-dark:#c25129; --accent-ink:#fff;
+      --line:#F1E8DE; --ring:rgba(212,90,46,.22);
+      --radius:16px; --shadow:0 10px 28px rgba(17,24,39,.08);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.65}
+    a{color:inherit}
+    /* Header */
+    header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);backdrop-filter:saturate(110%) blur(6px)}
+    .row{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 20px}
+    .brand{font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:700;color:#000}
+    nav a{color:var(--muted);text-decoration:none;font-weight:500;margin-left:22px}
+    nav a:hover{color:var(--ink)}
+    .btn{background:var(--accent);color:var(--accent-ink);text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:600;border:1px solid var(--accent-dark);box-shadow:0 6px 18px var(--ring)}
+    /* Hero */
+    .hero{max-width:1100px;margin:0 auto;padding:44px 20px 12px;display:grid;grid-template-columns:1.1fr 380px;gap:28px;align-items:center}
+    @media (max-width:980px){.hero{grid-template-columns:1fr}}
+    .title{font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:1.12;margin:0}
+    .subtitle{color:#25313a;margin-top:8px}
+    .avatar{
+      width:100%; max-width:380px; aspect-ratio:1/1; object-fit:cover;
+      border-radius:50%; border:8px solid #fff; box-shadow:var(--shadow);
+      background:#eee;
+    }
+    /* Main grid */
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+    .card{background:var(--paper);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    .card h2{font-family:Georgia,'Times New Roman',serif;font-size:28px;margin:0 0 10px}
+    .divider{height:1px;background:var(--line);margin:14px 0}
+    ul{margin:12px 0 0 18px}
+    li{margin:6px 0}
+    /* Contact list */
+    .contact-list{display:grid;gap:12px;margin-top:10px}
+    .contact-item{display:flex;align-items:center;gap:12px}
+    .contact-item .icon{
+      width:22px;height:22px;border-radius:6px;background:#FFEFE7;display:grid;place-items:center;
+      font-size:14px;border:1px solid #F5D3C2;
+    }
+    .contact-item a{color:#1f2a33;text-decoration:none}
+    .contact-item a:hover{text-decoration:underline}
+    /* Reviews */
+    .review{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}
+    .stars{letter-spacing:2px}
+    footer{border-top:1px solid var(--line);text-align:center;padding:36px 20px;color:var(--muted);margin-top:20px}
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: none
+  padding: 24px 40px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #C84F28; /* Orange */;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.login {
+  background-color: transparent;
+  color: #C84F28;
+  font-size: 1rem;
+  padding: 10px 18px;
+  border: 2px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.apply {
+  background-color: black; 
+  color: white;
+  font-size: 1rem;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .logo {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .actions button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+<header class="header">
+  <div class="logo">Pelatas</div>
+  <div class="actions">
+      <a href="./login.html" class="login">Log In</a>
+      <a href="./CreateTrainerAccount.html" class="apply">Apply to Join</a>
+  </div>
+</header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1 class="title">Maria Lopez</h1>
+      <p class="subtitle">Certified Vocal Trainer, 10+ Years Experience</p>
+      <p class="subtitle">Miami, Fl(Virtual or In Person)</p>
+    </div>
+    <!-- Replace profile.jpg with your image path -->
+    <img class="avatar" src="coach1.jpg" alt="Portrait of trainer Maria Lopez" />
+  </section>
+
+  <!-- Main -->
+  <main class="container">
+    <div class="grid">
+           <!-- Left column -->
+      <section class="card" aria-labelledby="about">
+        <h2 id="about">About Me</h2>
+        <p>
+          I’m a certified vocal coach dedicated to helping singers of all levels find their unique voice and build confidence.
+          My approach blends technical training with expressive techniques to support healthy, sustainable growth.
+        </p>
+        <div class="divider"></div>
+        <h2>Services</h2>
+        <ul>
+          <li>Virtual singing lesson $50/hr</li>
+          <li>In person singing lesson $75/hr</li>
+
+        </ul>
+        <div class="divider"></div>
+        <h2>Availability</h2>
+        <ul>
+          <li>Weekdays 9am-5pm</li>
+          <li>Weekends 11am-4pm</li>
+
+        </ul>
+   
+
+      </section>
+
+      <!-- Right column -->
+      <aside class="card" aria-labelledby="contact">
+        <h2 id="contact">Contact</h2>
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="icon">✉️</span>
+            <a href="mailto:maria@example.com">maria@example.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="icon">📞</span>
+            <a href="tel:+11234567890">+1 (123) 456-7890</a>
+          </div>
+          <div class="contact-item">
+            <span class="icon">in</span>
+            <a href="https://www.linkedin.com/in/marialopez" target="_blank" rel="noopener">linkedin.com/in/marialopez</a>
+          </div>
+          <div class="contact-item">
+            <span class="icon">📸</span>
+            <a href="https://www.instagram.com/marialopezvoice" target="_blank" rel="noopener">@marialopezvoice</a>
+          </div>
+          <div class="contact-item">
+            <span class="icon">🎵</span>
+            <a href="https://www.tiktok.com/@voicelessonsbymaria" target="_blank" rel="noopener">@voicelessonsbymaria</a>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+        <h2>Reviews</h2>
+        <div class="review">
+          <div class="stars">★★★★★</div>
+          <p>“Maria is wonderful to work with! She’s patient, encouraging, and great with kids.”</p>
+          <p style="color:var(--muted)">— Aimee R.</p>
+        </div>
+        <div class="review" style="margin-top:10px">
+          <div class="stars">★★★★★</div>
+          <p>“Helped me build confidence and nail my audition. Highly recommend!”</p>
+          <p style="color:var(--muted)">— James K.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+<footer style="background:#C84F28; color:#fff; padding:40px 20px; text-align:center;">
+  <div style="max-width:1100px; margin:0 auto;">
+    
+    <!-- Brand + Copyright -->
+    <div style="font-family:Georgia,'Times New Roman',serif; font-size:22px; font-weight:700; margin-bottom:6px;">
+      Pelatas
+    </div>
+    <div style="margin-bottom:20px;">
+      © 2025. All rights reserved.
+    </div>
+
+    <!-- Navigation Links -->
+    <nav style="margin-bottom:18px; font-size:15px;">
+      <a href="./index.html" style="color:#fff; text-decoration:none; margin:0 10px;">Home</a>
+      <a href="./about.html" style="color:#fff; text-decoration:none; margin:0 10px;">About</a>
+      <a href="./faqs.html" style="color:#fff; text-decoration:none; margin:0 10px;">FAQs</a>
+      <a href="./terms.html" style="color:#fff; text-decoration:none; margin:0 10px;">Terms of Service</a>
+      <a href="./privacy.html" style="color:#fff; text-decoration:none; margin:0 10px;">Privacy Policy</a>
+      <a href="./contact.html" style="color:#fff; text-decoration:none; margin:0 10px;">Contact</a>
+    </nav>
+
+    <!-- Contact -->
+    <div style="margin-bottom:18px; font-size:15px;">
+      <a href="mailto:team@pelatas.com" style="color:#fff; text-decoration:none;">
+        team@pelatas.com
+      </a>
+    </div>
+
+    <!-- Social Icons -->
+    <div style="display:flex; justify-content:center; gap:20px;">
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="color:#fff;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 
+          2.239 5 5 5h14c2.762 0 5-2.239 
+          5-5v-14c0-2.761-2.238-5-5-5zm-11 
+          19h-3v-10h3v10zm-1.5-11.268c-.966 
+          0-1.75-.79-1.75-1.764s.784-1.764 
+          1.75-1.764c.965 0 1.75.79 
+          1.75 1.764s-.785 1.764-1.75 
+          1.764zm13.5 11.268h-3v-5.604c0-1.337-.025-3.058-1.865-3.058-1.868 
+          0-2.155 1.459-2.155 
+          2.963v5.699h-3v-10h2.881v1.367h.041c.401-.761 
+          1.379-1.562 2.838-1.562 
+          3.033 0 3.591 1.996 3.591 4.59v5.605z"/>
+        </svg>
+      </a>
+      <!-- Instagram -->
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" style="color:#fff;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 
+          4.85.07 1.366.062 2.633.332 
+          3.608 1.308.975.975 1.246 2.242 
+          1.308 3.608.058 1.266.069 1.645.069 
+          4.851s-.012 3.584-.07 4.85c-.062 
+          1.366-.332 2.633-1.308 
+          3.608-.975.975-2.242 1.246-3.608 
+          1.308-1.266.058-1.645.069-4.851.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.332-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 
+          15.747 2.163 15.368 2.163 
+          12s.012-3.584.07-4.85c.062-1.366.332-2.633 
+          1.308-3.608.975-.975 2.242-1.246 
+          3.608-1.308C8.416 2.175 8.796 2.163 
+          12 2.163zm0-2.163C8.741 0 8.332.012 
+          7.052.07 5.775.128 4.602.443 
+          3.635 1.41c-.966.967-1.282 2.14-1.34 
+          3.417C2.012 6.107 2 6.516 2 
+          9.775v4.45c0 3.259.012 3.668.07 
+          4.948.058 1.277.374 2.45 
+          1.34 3.417.967.967 2.14 1.282 
+          3.417 1.34 1.28.058 1.689.07 
+          4.948.07s3.668-.012 
+          4.948-.07c1.277-.058 2.45-.374 
+          3.417-1.34.967-.967 1.282-2.14 
+          1.34-3.417.058-1.28.07-1.689.07-4.948v-4.45c0-3.259-.012-3.668-.07-4.948-.058-1.277-.374-2.45-1.34-3.417C19.4.443 
+          18.227.128 16.95.07 15.668.012 15.259 
+          0 12 0zm0 5.838a6.162 6.162 0 1 0 0 
+          12.324 6.162 6.162 0 0 0 0-12.324zm0 
+          10.162a3.999 3.999 0 1 1 0-7.998 3.999 
+          3.999 0 0 1 0 7.998zm6.406-11.845a1.44 
+          1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88z"/>
+        </svg>
+      </a>
+      <!-- TikTok -->
+      <a href="https://tiktok.com" target="_blank" aria-label="TikTok" style="color:#fff;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+          <path d="M12 0c-6.627 0-12 5.373-12 
+          12s5.373 12 12 12 12-5.373 
+          12-12-5.373-12-12-12zm3.75 
+          9.75c1.284.927 2.934 1.5 
+          4.688 1.5v-3.188c-.337.033-.675.05-1.012.05-1.125 
+          0-2.25-.375-3.188-1.063v7.313c0 
+          2.737-2.213 4.95-4.95 4.95s-4.95-2.213-4.95-4.95 
+          2.213-4.95 4.95-4.95c.35 
+          0 .688.038 1.012.113v3.212c-.325-.1-.662-.15-1.012-.15-1.237 
+          0-2.25 1.013-2.25 2.25s1.013 2.25 
+          2.25 2.25 2.25-1.013 
+          2.25-2.25v-8.962h3.212c-.088.537-.262 
+          1.05-.512 1.5z"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</footer>
+</body>
+</html>
