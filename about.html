@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pelatas — About Us</title>
+  <style>
+    :root{
+      --brand:#C84F28;            /* Pelatas orange */
+      --ink:#0f172a;              /* deep navy/black */
+      --muted:#4b5563;
+      --bg:white;            
+      --card:#ffffff;
+      --shadow:0 6px 18px rgba(15,23,42,.06);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.6;
+    }
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:10;
+      background:#fff;
+      box-shadow:0 1px 0 rgba(15,23,42,.06);
+    }
+    .nav{
+      max-width:1100px; margin:0 auto; padding:20px 20px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .logo{
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size:40px; line-height:1; letter-spacing:.2px;
+      color:var(--brand);
+    }
+    .nav ul{display:flex; gap:28px; list-style:none; margin:0; padding:0; align-items:center}
+    .nav a{color:var(--ink); text-decoration:none; font-weight:500}
+    .nav .cta{
+      background:var(--brand); color:#fff; padding:10px 16px; border-radius:10px; font-weight:600;
+    }
+
+    /* Hero */
+    .hero{
+      max-width:900px; margin:40px auto 10px; padding:0 20px; text-align:center;
+    }
+    h1{
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size:56px; line-height:1.1; margin:18px 0 8px; font-weight:700;
+    }
+    .subtitle{
+      color:var(--muted); font-size:20px; max-width:780px; margin:0 auto 20px;
+    }
+
+    /* Content grid */
+    .grid{
+      max-width:1100px; margin:30px auto 80px; padding:0 20px;
+      display:grid; grid-template-columns: 1.1fr 1fr; gap:32px;
+    }
+    @media (max-width:960px){
+      .grid{grid-template-columns:1fr}
+    }
+    h2{
+      font-family: "Georgia", "Times New Roman", serif;
+      font-size:40px; line-height:1.15; margin:28px 0 10px;
+    }
+    p{margin:0 0 12px}
+
+    /* Cards (Learners / Coaches) */
+    .cards{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    @media (max-width:520px){ .cards{grid-template-columns:1fr} }
+    .card{
+      background:var(--card); border-radius:var(--radius); padding:22px; box-shadow:var(--shadow);
+    }
+    .icon{
+      width:40px; height:40px; display:grid; place-items:center;
+      background:rgba(227,100,20,.12); color:var(--brand);
+      border-radius:10px; margin-bottom:10px;
+    }
+    .card h3{margin:6px 0 6px; font-size:20px}
+    .small{color:var(--muted); font-size:15px}
+
+    /* Values row */
+    .values{
+      display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:16px;
+    }
+    @media (max-width:700px){ .values{grid-template-columns:repeat(2,1fr)} }
+    .value{
+      display:flex; align-items:center; gap:10px;
+      padding:12px 14px; background:#fff; border-radius:12px; box-shadow:var(--shadow);
+      font-weight:600;
+    }
+    .value .mini{
+      width:28px; height:28px; display:grid; place-items:center;
+      background:rgba(227,100,20,.12); color:var(--brand); border-radius:8px;
+    }
+
+    /* Story + Quotes */
+    .story p.emph{font-style:italic; color:#111; background:rgba(227,100,20,.07); padding:10px 14px; border-radius:10px}
+    .quotes{
+      background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow);
+      padding:22px;
+    }
+    blockquote{
+      margin:0 0 16px; padding-left:16px; border-left:4px solid rgba(227,100,20,.35);
+      font-style:italic; color:#111; font-size:18px;
+    }
+
+    /* Join + floating CTA */
+    .join{max-width:1100px; margin:0 auto 120px; padding:0 20px}
+    .cta-floating{
+      position:fixed; right:22px; bottom:22px;
+      background:var(--brand); color:#fff; border:none; border-radius:14px;
+      padding:14px 22px; font-size:18px; font-weight:700; cursor:pointer;
+      box-shadow:0 10px 24px rgba(227,100,20,.35);
+    }
+    .cta-floating:hover{transform:translateY(-1px)}
+    a.button{display:inline-block; background:var(--brand); color:#fff; text-decoration:none;
+      padding:12px 18px; border-radius:12px; font-weight:700}
+    footer{color:var(--muted); font-size:14px; text-align:center; padding:32px 10px 60px}
+/* Base styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 24px 40px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #C84F28;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.login {
+  background-color: transparent;
+  color: #C84F28;
+  font-size: 1rem;
+  padding: 10px 18px;
+  border: 2px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.apply {
+  background-color: #000;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .logo {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .actions button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+<header class="header">
+  <div class="logo">Pelatas</div>
+  <div class="actions">
+      <a href="./CreateTrainerAccount.html" class="login">Trainers</a>
+      <a href="./CreateClientAccount.html" class="apply">Aspiring Experts (Clients)</a>
+  </div>
+</header>
+
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>About Us</h1>
+    <p class="subtitle">
+      Connecting athletes, performers, and professionals<br />
+      with world-class coaches and mentors.
+    </p>
+  </section>
+
+  <!-- Content -->
+  <section class="grid">
+    <!-- Left column -->
+    <div>
+      <h2>Our Mission</h2>
+      <p>
+        At Pelatas, we believe that greatness is never achieved alone. Every athlete,
+        performer, and professional thrive with the right guidance. Our mission is to make
+        world-class coaching accessible to everyone by connecting individuals with elite
+        trainers and mentors across sports and performance.
+      </p>
+
+      <div class="cards" style="margin-top:18px">
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <!-- user icon -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z"/></svg>
+          </div>
+          <h3>For Learners &amp; Families</h3>
+          <p class="small">Gain access to trusted, top-tier mentors tailored to your goals.</p>
+        </article>
+
+        <article class="card">
+          <div class="icon" aria-hidden="true">
+            <!-- handshake -->
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M21 8h-3l-2-2h-4l-2 2H7L3 12l3 3h3l2 2h4l2-2h3l3-3Z"/></svg>
+          </div>
+          <h3>For Coaches &amp; Trainers</h3>
+          <p class="small">Expand reach, gain clients, and grow your reputation.</p>
+        </article>
+      </div>
+
+      <div class="values">
+        <div class="value"><span class="mini">
+          <!-- star -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="m12 17.27 6.18 3.73-1.64-7.03L21 9.24l-7.19-.61L12 2 10.19 8.63 3 9.24l4.46 4.73L5.82 21z"/></svg>
+        </span>Excellence</div>
+        <div class="value"><span class="mini">
+          <!-- box-arrow -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"/><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7z"/></svg>
+        </span>Accessibility</div>
+        <div class="value"><span class="mini">
+          <!-- arrow up-right -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18 18 6M8 6h10v10"/></svg>
+        </span>Growth</div>
+        <div class="value"><span class="mini">
+          <!-- users -->
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11a4 4 0 1 0-4-4 4 4 0 0 0 4 4ZM6 13a3 3 0 1 0-3-3 3 3 0 0 0 3 3Zm10 2c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4ZM6 15c-2.5 0-6 1.17-6 3v2h6"/></svg>
+        </span>Community</div>
+      </div>
+
+      <h2 style="margin-top:34px">Our Story</h2>
+      <div class="story">
+        <p>Pelatas was founded on a simple idea: everyone deserves access to the kind of training and mentorship that creates champions.</p>
+        <p class="emph"><strong>As a cofounder and parent</strong>, I struggled to find the very best coaches for my kids — the ones who could nurture their talent and push them to grow. Pelatas was born out of that journey.</p>
+      </div>
+
+      <h2 style="margin-top:34px">Join Us</h2>
+      <p>Whether you’re an athlete, performer, or simply striving for personal growth, Pelatas is here to guide your journey.</p>
+      <p style="margin-top:10px"><a class="button" href="./CreateTrainerAccount.html">Trainers</a></p>
+      <p style="margin-top:10px"><a class="button" href="./CreateClientAccount.html">Aspiring Experts (Clients)</a></p>
+    </div>
+
+    <!-- Right column -->
+    <aside class="quotes">
+      <h2>Testimonials</h2>
+      <blockquote>
+        “Pelatas connected my daughter with the perfect coach. Her mentor has been a game-changer.”
+      </blockquote>
+      <blockquote>
+        “I’ve been able to expand my client base and find great new opportunities through Pelatas.”
+      </blockquote>
+    </aside>
+  </section>
+
+ <footer style="background:#C84F28; color:#fff; padding:40px 20px; text-align:center;">
+  <div style="max-width:1100px; margin:0 auto;">
+    
+    <!-- Brand + Copyright -->
+    <div style="font-family:Georgia,'Times New Roman',serif; font-size:22px; font-weight:700; margin-bottom:6px;">
+      Pelatas
+    </div>
+    <div style="margin-bottom:20px;">
+      © 2025. All rights reserved.
+    </div>
+
+    <!-- Navigation Links -->
+    <nav style="margin-bottom:18px; font-size:15px;">
+      <a href="./index.html" style="color:#fff; text-decoration:none; margin:0 10px;">Home</a>
+      <a href="./about.html" style="color:#fff; text-decoration:none; margin:0 10px;">About</a>
+      <a href="./faqs.html" style="color:#fff; text-decoration:none; margin:0 10px;">FAQs</a>
+      <a href="./terms.html" style="color:#fff; text-decoration:none; margin:0 10px;">Terms of Service</a>
+      <a href="./privacy.html" style="color:#fff; text-decoration:none; margin:0 10px;">Privacy Policy</a>
+      <a href="./contact.html" style="color:#fff; text-decoration:none; margin:0 10px;">Contact</a>
+    </nav>
+
+    <!-- Contact -->
+    <div style="margin-bottom:18px; font-size:15px;">
+      <a href="mailto:team@pelatas.com" style="color:#fff; text-decoration:none;">
+        Team@Pelatas.com
+      </a>
+    </div>
+
+    <!-- Social Icons -->
+    <div style="display:flex; justify-content:center; gap:20px;">
+      <!-- LinkedIn -->
+      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="color:#fff;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 
+          2.239 5 5 5h14c2.762 0 5-2.239 
+          5-5v-14c0-2.761-2.238-5-5-5zm-11 
+          19h-3v-10h3v10zm-1.5-11.268c-.966 
+          0-1.75-.79-1.75-1.764s.784-1.764 
+          1.75-1.764c.965 0 1.75.79 
+          1.75 1.764s-.785 1.764-1.75 
+          1.764zm13.5 11.268h-3v-5.604c0-1.337-.025-3.058-1.865-3.058-1.868 
+          0-2.155 1.459-2.155 
+          2.963v5.699h-3v-10h2.881v1.367h.041c.401-.761 
+          1.379-1.562 2.838-1.562 
+          3.033 0 3.591 1.996 3.591 4.59v5.605z"/>
+        </svg>
+      </a>
+      <!-- Instagram -->
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram" style="color:#fff;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+          <path d="M12 2.163c3.204 0 3.584.012 
+          4.85.07 1.366.062 2.633.332 
+          3.608 1.308.975.975 1.246 2.242 
+          1.308 3.608.058 1.266.069 1.645.069 
+          4.851s-.012 3.584-.07 4.85c-.062 
+          1.366-.332 2.633-1.308 
+          3.608-.975.975-2.242 1.246-3.608 
+          1.308-1.266.058-1.645.069-4.851.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.332-3.608-1.308-.975-.975-1.246-2.242-1.308-3.608C2.175 
+          15.747 2.163 15.368 2.163 
+          12s.012-3.584.07-4.85c.062-1.366.332-2.633 
+          1.308-3.608.975-.975 2.242-1.246 
+          3.608-1.308C8.416 2.175 8.796 2.163 
+          12 2.163zm0-2.163C8.741 0 8.332.012 
+          7.052.07 5.775.128 4.602.443 
+          3.635 1.41c-.966.967-1.282 2.14-1.34 
+          3.417C2.012 6.107 2 6.516 2 
+          9.775v4.45c0 3.259.012 3.668.07 
+          4.948.058 1.277.374 2.45 
+          1.34 3.417.967.967 2.14 1.282 
+          3.417 1.34 1.28.058 1.689.07 
+          4.948.07s3.668-.012 
+          4.948-.07c1.277-.058 2.45-.374 
+          3.417-1.34.967-.967 1.282-2.14 
+          1.34-3.417.058-1.28.07-1.689.07-4.948v-4.45c0-3.259-.012-3.668-.07-4.948-.058-1.277-.374-2.45-1.34-3.417C19.4.443 
+          18.227.128 16.95.07 15.668.012 15.259 
+          0 12 0zm0 5.838a6.162 6.162 0 1 0 0 
+          12.324 6.162 6.162 0 0 0 0-12.324zm0 
+          10.162a3.999 3.999 0 1 1 0-7.998 3.999 
+          3.999 0 0 1 0 7.998zm6.406-11.845a1.44 
+          1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88z"/>
+        </svg>
+      </a>
+      <!-- TikTok -->
+      <a href="https://tiktok.com" target="_blank" aria-label="TikTok" style="color:#fff;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white" viewBox="0 0 24 24">
+          <path d="M12 0c-6.627 0-12 5.373-12 
+          12s5.373 12 12 12 12-5.373 
+          12-12-5.373-12-12-12zm3.75 
+          9.75c1.284.927 2.934 1.5 
+          4.688 1.5v-3.188c-.337.033-.675.05-1.012.05-1.125 
+          0-2.25-.375-3.188-1.063v7.313c0 
+          2.737-2.213 4.95-4.95 4.95s-4.95-2.213-4.95-4.95 
+          2.213-4.95 4.95-4.95c.35 
+          0 .688.038 1.012.113v3.212c-.325-.1-.662-.15-1.012-.15-1.237 
+          0-2.25 1.013-2.25 2.25s1.013 2.25 
+          2.25 2.25 2.25-1.013 
+          2.25-2.25v-8.962h3.212c-.088.537-.262 
+          1.05-.512 1.5z"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</footer> 
+</body>
+</html>
